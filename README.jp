@@ -1,0 +1,28 @@
+libwiki.pyは、Wikipediaのダンプを解析するPythonライブラリです。
+
+動作方法
+=======
+* https://dumps.wikimedia.org/jawiki/ から jawiki-20210501-pages-articles.xml.bz2 をダウンロードする。
+* unzip2 で jawiki-20210501-pages-articles.xml.bz2 を jawiki-20210501-pages-articles.xml にする。
+* 下記を実行する。
+  python sample1_main.pl jawiki-20210501-pages-articles.xml
+* ダンプに格納されているページタイトルがずらずらと表示されるので、すべて終わるのに30分以上かかるので、
+  満足したらCtrl-Cで中止する。
+
+使い方
+=======
+* libwiki.py を 自分のPerlプログラムにインクルードする。
+* 下記の関数をコールする
+  libwiki::set_filename()
+  libwiki::set_handler()
+  libwiki::parse()
+* 登録したハンドラがページ毎にコールされるので、そこで自分なりの処理を行ってください。
+* 詳細は、sample1_main1.pyを参照のこと。
+
+作者
+======
+ケビン・ジョーンズ
+
+ライセンス
+==========
+MITライセンス
