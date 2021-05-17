@@ -6,17 +6,16 @@ import libwiki
 def handler(page):
     #print("handler() start!")
     title = page['title']
-    #print("title = "+title)
+    print("title = "+title)
+    pageid = page['pageid']
+    print("pageid = "+pageid)
     for line in page['text']:
-        result = re.search("http:\/\/[0-9a-z\.]*megalodon", line)
-        if result:
-            print("* [[:" + title + "]]");
-            print("*: <nowiki>[" + line + "]</nowiki>");
+        print("line = "+line)
 
 def sub(dumpfile):
     libwiki.set_filename(dumpfile)
     libwiki.set_handler(handler)
-    libwiki.do_proc()
+    libwiki.parse()
 
 def main():
     if len(sys.argv) < 2:
