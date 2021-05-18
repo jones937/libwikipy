@@ -26,3 +26,8 @@ libwiki.pyは、Wikipediaのダンプを解析するPythonライブラリです�
 ライセンス
 ==========
 MITライセンス
+
+姉妹作
+==========
+Perl version
+https://github.com/jones937/libwiki
