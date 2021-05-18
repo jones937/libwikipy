@@ -3,7 +3,7 @@ libwiki.pyは、Wikipediaのダンプを解析するPythonライブラリです�
 動作方法
 =======
 * https://dumps.wikimedia.org/jawiki/ から jawiki-20210501-pages-articles.xml.bz2 をダウンロードする。
-* unzip2 で jawiki-20210501-pages-articles.xml.bz2 を jawiki-20210501-pages-articles.xml にする。
+* bunzip2 で jawiki-20210501-pages-articles.xml.bz2 を jawiki-20210501-pages-articles.xml にする。
 * 下記を実行する。
   python sample1_main.pl jawiki-20210501-pages-articles.xml
 * ダンプに格納されているページタイトルがずらずらと表示されるので、すべて終わるのに30分以上かかるので、

@@ -5,7 +5,7 @@
 ## Getting Started
 
 * Download enwiki-20210501-pages-articles.xml.bz2 from https://dumps.wikimedia.your.org/backup-index.html
-* Unbzip2 enwiki-20210501-pages-articles.xml.bz2
+* bunzip2 enwiki-20210501-pages-articles.xml.bz2
 * Run python
   * $ python sample1_main.py enwiki-20210501-pages-articles.xml
 
