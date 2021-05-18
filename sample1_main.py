@@ -19,7 +19,7 @@ def sub(dumpfile):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: main.py <filename>")
+        print("Usage: sample1_main.py <filename>")
         return
     dumpfile = sys.argv[1]
     print(dumpfile)
