@@ -1,6 +1,6 @@
 # libwiki
 
-'libwiki.py' is a library for wikipedia written in Python.
+Analyze 'wikipedia dump xml file'.
 
 ## Getting Started
 
