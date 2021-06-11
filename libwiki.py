@@ -52,6 +52,8 @@ def parse():
 
     with open(g_dumpfile) as f:
         for line in f:
+            line = convert_ref2norm(line)
+
             if not g_inpage:
                 if "<page>" in line:
                     g_inpage = True
@@ -89,6 +91,13 @@ def parse():
                     #line = re.sub(".*xml:space=\"preserve\">", "", line)
                     line = RE_PRESERVE1.sub("", line)
                     line = line.rstrip('\n')
+
+                    # 一行の場合がある。2021.6.11
+                    result2 = RE_TEXT2.search(line)
+                    if result2:
+                        line = RE_TEXT3.sub("", line)
+                        g_intext  = False
+
                     #print("line="+line)
                     page['text'] = [line]
                     continue
