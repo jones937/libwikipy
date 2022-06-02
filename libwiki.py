@@ -21,6 +21,7 @@ RE_PRESERVE1 = re.compile(".*xml:space=\"preserve\">")
 RE_TEXT1 = re.compile("^[ ]*<text")
 RE_TEXT2 = re.compile("<\/text>$")
 RE_TEXT3 = re.compile("<\/text>$")
+RE_TEXT4 = re.compile("^[ ]*<text.*\/>")
 #------------------------------------------
 
 def set_filename(filename):
@@ -83,6 +84,13 @@ def parse():
 
 
             if not g_intext:
+                # ページ内容が0byteの空白の場合がある 2022.6.2
+                result = RE_TEXT4.search(line)
+                if result:
+                    page['text'] = ''
+                    g_intext  = False
+                    continue
+
                 #result = re.search("^[ ]*<text", line)
                 result = RE_TEXT1.search(line)
                 if result:
